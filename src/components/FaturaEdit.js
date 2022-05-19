@@ -19,7 +19,7 @@ const FaturaEdit = () => {
 
     useEffect(() => {
         axios
-          .get(`http://localhost:5000/api/v1/cari`)
+          .get(`https://imaj-backend.herokuapp.com/api/v1/cari`)
           .then((res) => {
             console.log(res);
             setAPIData(res.data);
@@ -32,7 +32,7 @@ const FaturaEdit = () => {
     
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/v1/fatura/${id}`)
+      .get(`https://imaj-backend.herokuapp.com/api/v1/fatura/${id}`)
       .then((res) => {
         console.log(res);
         setState({ ...res.data[0]});
@@ -54,7 +54,7 @@ const FaturaEdit = () => {
   const update = async () => {
     if (window.confirm("Fatura  ismini değiştirmek istediğinzden Eminmisniz ?")) {
       await axios
-        .put(`http://localhost:5000/api/v1/cari/${id}`, { 
+        .put(`https://imaj-backend.herokuapp.com/api/v1/cari/${id}`, { 
             tur,
             cari_id,
             miktar,

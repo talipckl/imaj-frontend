@@ -16,7 +16,7 @@ const Tahsilat = () => {
     } else {
       if (fis === "ODEME_YAP") {
         axios
-          .post("http://localhost:5000/api/v1/mahsup", {
+          .post("https://imaj-backend.herokuapp.com/api/v1/mahsup", {
             cari_id: id.cariId,
             borc: tutar,
             alacak: 0,
@@ -32,7 +32,7 @@ const Tahsilat = () => {
           });
       } else if (fis === "ODEME_AL") {
         axios
-          .post("http://localhost:5000/api/v1/mahsup", {
+          .post("https://imaj-backend.herokuapp.com/api/v1/mahsup", {
             cari_id: id.cariId,
             borc: 0,
             alacak: tutar,
@@ -53,7 +53,7 @@ const Tahsilat = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/v1/cari`)
+      .get(`https://imaj-backend.herokuapp.com/api/v1/cari`)
       .then((response) => {
         setCariData(response.data);
       })
@@ -73,7 +73,7 @@ const Tahsilat = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/v1/carim/${id.cariId}`)
+      .get(`https://imaj-backend.herokuapp.com/api/v1/carim/${id.cariId}`)
       .then((response) => {
         setCari(response.data);
       })

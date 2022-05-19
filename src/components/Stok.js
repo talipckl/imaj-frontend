@@ -6,7 +6,7 @@ const Stok = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/v1/stok")
+      .get("https://imaj-backend.herokuapp.com/api/v1/stok")
       .then((res) => {
         setStok(res.data);
       })

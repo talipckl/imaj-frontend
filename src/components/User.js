@@ -21,7 +21,7 @@ const User = () => {
 
   const login = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:5000/api/v1/login", body)
+    axios.post("https://imaj-backend.herokuapp.com/api/v1/login", body)
     .then((data) => {
         console.log(data);
         localStorage.setItem("token", data.data.token);

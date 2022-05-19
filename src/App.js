@@ -18,7 +18,7 @@ const App = () => {
   let navigate = useNavigate();
    useEffect(() => {
         const token = localStorage.getItem("token");
-        fetch("http://localhost:5000/api/v1/authen", {
+        fetch("https://imaj-backend.herokuapp.com/api/v1/authen", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

@@ -19,7 +19,7 @@ const HesapEkstresi = () => {
   const getirHesap = (e) => {
     e.preventDefault();
     axios
-      .get(`http://localhost:5000/api/v1/mahsup/cari/${cari_id.cariId}`)
+      .get(`https://imaj-backend.herokuapp.com/api/v1/mahsup/cari/${cari_id.cariId}`)
       .then((response) => {
         setHesap(response.data);
       })
@@ -33,7 +33,7 @@ const HesapEkstresi = () => {
   };
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/v1/cari`)
+      .get(`https://imaj-backend.herokuapp.com/api/v1/cari`)
       .then((response) => {
         setCari(response.data);
       })

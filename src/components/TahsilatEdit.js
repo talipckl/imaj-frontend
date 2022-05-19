@@ -21,7 +21,7 @@ const TahsilatEdit = () => {
 
     useEffect(() => {
         axios
-          .get(`http://localhost:5000/api/v1/cari`)
+          .get(`https://imaj-backend.herokuapp.com/api/v1/cari`)
           .then((res) => {
             console.log(res);
             setAPIData(res.data);
@@ -34,7 +34,7 @@ const TahsilatEdit = () => {
     
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/v1/muhasebe/${id}`)
+      .get(`https://imaj-backend.herokuapp.com/api/v1/muhasebe/${id}`)
       .then((res) => {
         console.log(res);
         setState({ ...res.data[0]});
@@ -56,7 +56,7 @@ const TahsilatEdit = () => {
   const update = async () => {
     if (window.confirm("Fatura  ismini değiştirmek istediğinzden Eminmisniz ?")) {
       await axios
-        .put(`http://localhost:5000/api/v1/mahsup/${id}`, { 
+        .put(`https://imaj-backend.herokuapp.com/api/v1/mahsup/${id}`, { 
          cari_id, borc,alacak, tarih
          })
         .then((res) => {

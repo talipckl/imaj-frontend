@@ -17,7 +17,7 @@ const CariDüzenleme = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/v1/carim/${id}`)
+      .get(`https://imaj-backend.herokuapp.com/api/v1/carim/${id}`)
       .then((res) => {
         console.log(res);
         setState({ ...res.data[0] });
@@ -38,7 +38,7 @@ const CariDüzenleme = () => {
   const update = async () => {
     if (window.confirm("firma ismini değiştirmek istediğinzden Eminmisniz ?")) {
       await axios
-        .put(`http://localhost:5000/api/v1/cari/${id}`, { adi })
+        .put(`https://imaj-backend.herokuapp.com/api/v1/cari/${id}`, { adi })
         .then((res) => {
           console.log(res);
           alert("fiş başarıyla güncellendi");

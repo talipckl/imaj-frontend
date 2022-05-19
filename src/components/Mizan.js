@@ -4,7 +4,7 @@ const Mizan = () => {
   const [mizan, setMizan] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/v1/mizan`)
+      .get(`https://imaj-backend.herokuapp.com/api/v1/mizan`)
       .then((response) => {
         setMizan(response.data);
       })

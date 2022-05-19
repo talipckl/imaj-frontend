@@ -15,7 +15,7 @@ const CariKayit = (props) => {
       alert("Lütfen Firma Adını Giriniz");
     } else {
       axios
-        .post("http://localhost:5000/api/v1/cari", {
+        .post("https://imaj-backend.herokuapp.com/api/v1/cari", {
           adi: carikayit,
         })
         .then((res) => {
@@ -31,7 +31,7 @@ const CariKayit = (props) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/v1/cari")
+      .get("https://imaj-backend.herokuapp.com/api/v1/cari")
       .then((res) => {
         console.log(res);
         setcariList(res.data);
@@ -43,7 +43,7 @@ const CariKayit = (props) => {
 
   const cariSil = async (id) =>   {
       if(window.confirm("Silmek istediğinize eminmisniz")){
-        const response = await axios.delete(`http://localhost:5000/api/v1/cari/${id}`);
+        const response = await axios.delete(`https://imaj-backend.herokuapp.com/api/v1/cari/${id}`);
         if(response.status===200){
           alert("silme işlemi başarılı")
         }

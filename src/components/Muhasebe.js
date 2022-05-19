@@ -19,7 +19,7 @@ const Muhasebe = () => {
   const getirMahsup = (e) => {
     e.preventDefault();
     axios
-      .get(`http://localhost:5000/api/v1/mahsup/${cari_id.cariId}`)
+      .get(`https://imaj-backend.herokuapp.com/api/v1/mahsup/${cari_id.cariId}`)
       .then((response) => {
         setMahsup(response.data);
       })
@@ -34,7 +34,7 @@ const Muhasebe = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/v1/cari`)
+      .get(`https://imaj-backend.herokuapp.com/api/v1/cari`)
       .then((response) => {
         setCari(response.data);
       })
@@ -49,7 +49,7 @@ const Muhasebe = () => {
   const TahsilatSil = async (id) => {
     if (window.confirm("Tahsilatı Silmek istediğinize eminmisniz")) {
       const response = await axios.delete(
-        `http://localhost:5000/api/v1/mahsup/${id}`
+        `https://imaj-backend.herokuapp.com/api/v1/mahsup/${id}`
       );
       if (response.status === 200) {
         alert("silme işlemi başarılı");

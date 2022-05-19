@@ -28,7 +28,7 @@ const FaturaKayıt = () => {
       alert("Lütfen tüm alanları doldurunuz.");
     } else {
       axios
-        .post("http://localhost:5000/api/v1/fatura", {
+        .post("https://imaj-backend.herokuapp.com/api/v1/fatura", {
           tur,
           cari_id,
           miktar,
@@ -39,7 +39,7 @@ const FaturaKayıt = () => {
         .then((res) => {
           if (tur === "ALIŞ") {
             axios
-              .post("http://localhost:5000/api/v1/mahsup", {
+              .post("https://imaj-backend.herokuapp.com/api/v1/mahsup", {
                 cari_id,
                 borc: 0,
                 alacak: tutar,
@@ -54,7 +54,7 @@ const FaturaKayıt = () => {
               });
           } else if (tur === "SATIŞ") {
             axios
-              .post("http://localhost:5000/api/v1/mahsup", {
+              .post("https://imaj-backend.herokuapp.com/api/v1/mahsup", {
                 cari_id,
                 borc: tutar,
                 alacak: 0,
@@ -82,7 +82,7 @@ const FaturaKayıt = () => {
   const [APIData, setAPIData] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/v1/cari`)
+      .get(`https://imaj-backend.herokuapp.com/api/v1/cari`)
       .then((response) => {
         setAPIData(response.data);
       })
@@ -96,7 +96,7 @@ const FaturaKayıt = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/v1/fatura_liste`)
+      .get(`https://imaj-backend.herokuapp.com/api/v1/fatura_liste`)
       .then((response) => {
         setFaturaData(response.data);
       })
@@ -108,7 +108,7 @@ const FaturaKayıt = () => {
   const faturaSil = async (id) => {
     if (window.confirm("Fatura Kayıdını Silmek İstediğinizden Eminmisniz ? ")) {
       const response = await axios.delete(
-        `http://localhost:5000/api/v1/fatura/${id}`
+        `https://imaj-backend.herokuapp.com/api/v1/fatura/${id}`
       );
       if (response.status === 200) {
         alert("silme işlemi başarılı");
