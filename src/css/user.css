@@ -1,0 +1,22 @@
+.img{
+    /* background-image:url(images/xbg-1.jpg.pagespeed.ic.EtoN2PmO7Y.webp);
+     */
+     /* background-image: url(images/xbg-1.jpg.pagespeed.ic.EtoN2PmO7Y.webp); */
+}
+.login-wrap{
+  
+    background-color: #2A3F54;
+    margin-top: 5rem;
+    margin-right: 45rem;
+    width: 30rem;
+    height: 25rem;
+    border-radius: 1rem;
+    color: black;
+}
+
+.container{
+  
+    border-radius: 1rem;
+    margin-top: 5rem;
+
+}

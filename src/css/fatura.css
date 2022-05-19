@@ -1,0 +1,14 @@
+.row {
+    margin-top: 1.5rem;
+}
+#bbtn{
+    margin-top: 2rem;
+}
+#btnSec:hover{
+    background-color: #00a8ff;
+}
+
+/* .scrollable{
+        height: 700px;
+        overflow-y: scroll;
+} */
